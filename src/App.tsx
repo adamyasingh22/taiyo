@@ -1,11 +1,15 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import { AppRoutes } from "./navigators/Routes";
-
+import "./index.css";
+import { ContentContainer } from "./components/atoms/ContentContainer";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 const App: React.FC = () => {
   return (
     <BrowserRouter>
-		<AppRoutes />
+      <Provider store={store}>
+        <ContentContainer />
+      </Provider>
     </BrowserRouter>
   );
 };
